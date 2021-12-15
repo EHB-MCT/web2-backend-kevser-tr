@@ -1,12 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const dotenv = require('dotenv').config()
 const port = process.env.PORT || 3000
 const uri = process.env.MONGODB_URI;
 
 const { MongoClient } = require("mongodb");
  
-// Replace the following with your Atlas connection string                                                                                                                                        
+
+console.log(dotenv.parsed);
+                                                                                                                                      
 const url = "mongodb+srv://admin:admin@cluster0.liznr.mongodb.net/webcourseproject?retryWrites=true&w=majority";
 const client = new MongoClient(url);
  
