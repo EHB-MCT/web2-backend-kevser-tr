@@ -3,14 +3,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const dotenv = require('dotenv').config()
 const port = process.env.PORT || 3000
-const uri = process.env.MONGODB_URI;
 
 const {
   MongoClient
 } = require("mongodb");
 
-const url = "mongodb+srv://admin:admin@cluster0.liznr.mongodb.net/webcourseproject?retryWrites=true&w=majority";
-const client = new MongoClient(url);
+const client = new MongoClient(process.env.MONGODB_URI);
 
 // The database to use
 const dbName = "webcourseproject";
@@ -51,7 +49,6 @@ run().catch(console.dir);
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-
   console.log('my root api');
   res.send('Hello World! kev')
 })
