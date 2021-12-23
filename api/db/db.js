@@ -2,7 +2,6 @@ const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
 const client = new MongoClient(process.env.MONGODB_URI);
-// const client = new MongoClient("mongodb+srv://admin:admiz@cluster0.liznr.mongodb.net/webcourseproject?retryWrites=true&w=majority");
 
 async function run() {
   try {

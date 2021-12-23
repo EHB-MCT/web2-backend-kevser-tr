@@ -11,14 +11,6 @@ router.get('/:id', (req, res) => {
         res.send(`Project ID: ${team_id}`)
     }
 
-    const teams = DB.collection("teams").find()
-    DB.collection("teams").find({}).toArray(function(err, result) {
-        if (err) throw err;
-        console.log(result);
-        client.close();
-        res.status(200).json(result)
-    });
-
 })
 
 module.exports = router;
