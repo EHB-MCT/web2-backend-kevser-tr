@@ -9,6 +9,8 @@ const DB = require("./db/db");
 const getAllTeams = require("./routes/read-teams");
 const getTeamsDetails = require("./routes/read-teams-details");
 const createTeams = require("./routes/create-teams");
+const deleteTeams = require("./routes/delete-teams");
+const updateTeams = require("./routes/update-teams");
 
 app.use(
   cors({
@@ -28,6 +30,8 @@ app.get('/', (req, res) => {
 app.use("/teams", getAllTeams);
 app.use("/teams/id", getTeamsDetails);
 app.use("/teams", createTeams);
+app.use("/delete", deleteTeams);
+app.use("/update", updateTeams);
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
