@@ -25,9 +25,9 @@ router.put('/:id', (req, res) => {
     membersArray.push(teamMembers)
 
     var newValues = { $set: {
-        name: "Kefta",
-        damage: 0,
-        magic: 0,
+        name: "Tarinkulhululu TEAM",
+        damage: 1,
+        magic: 100,
         defense: 0,
         members: membersArray
     }};
